@@ -1,7 +1,7 @@
 import streamlit
 
 ```bash
- pip install snowflake-connector-python
+ python -m venv mon_environnement
  ```
 
 import snowflake.connector
