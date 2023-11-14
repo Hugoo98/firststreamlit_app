@@ -47,7 +47,6 @@ except URLError as e:
 streamlit.write('The user entered ', fruit_choice)
 
 #Don't run anything past here while we troubleshoot 
-streamlit.stop()
 
 stream.header("The fruit load list contains")
 #Snowflake-related functions
@@ -57,6 +56,7 @@ def get_fruit_load_list():
         my_cur.execute("SELECT * from fruit_load_list")
         return my_cur.fetchall()
 
+streamlit.stop()
 if streamlit.button('Get fruit Load List'):
     my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
     my_data_rows = get_fruit_load_list()
